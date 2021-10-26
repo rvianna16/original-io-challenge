@@ -1,0 +1,74 @@
+@use "../../assets/scss/variables" as var;
+
+.header {
+  &-logo {
+    padding: 25px 0;
+    text-align: center;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  color: var.$menu-color;
+  padding: 20px 0;
+
+  &-sign {
+    ul {
+      display: flex;
+    }
+
+    li:nth-child(2) {
+      margin: 0 15px;
+    }
+  }
+
+  &-nav {
+    &__list {
+      display: flex;
+    }
+
+    &__item {
+      text-transform: uppercase;
+      margin-left: 2.5rem;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &-right {
+    display: flex;
+    
+
+    .search {
+      display: flex;
+      border-bottom: 2px solid rgba(104, 104, 104, 0.4);
+      padding-bottom: 5px;
+      margin-right: 40px;
+
+      input {
+        margin-left: 15px;
+        border: none;
+        outline: none;
+        width: 50px;
+        transition: 0.5s;
+        font-size: 1rem;
+
+        &:focus {
+          width: 120px;
+        }
+      }
+    }
+
+    .cart {
+      span {
+        margin-left: 5px;
+      }
+    }
+  }
+}

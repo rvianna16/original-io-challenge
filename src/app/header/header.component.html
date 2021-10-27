@@ -1,37 +1,88 @@
-<header class="container">
-  <div class="header-logo">
-    <a routerLink=""><img src="../../assets/logo.svg" alt="original.io"></a>
-  </div>
-  <div class="menu">
-    <div class="menu-sign">
-      <ul>
-        <li>Entrar</li>
-        <li>|</li>
-        <li>Cadastrar-se</li>
-      </ul>
-    </div>
+<header>
+  <div class="navbar">
+    <div class="container navbar-content" [class.active]="openMenu">
+      <button id="btn-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-expanded="false" (click)="menuMobile($event)"></button>
 
-    <div class="menu-nav">
-      <nav>
-        <ul class="menu-nav__list">
-          <li class="menu-nav__item">Sapatos</li>
-          <li class="menu-nav__item">Bolsas</li>
-          <li class="menu-nav__item">Acessórios</li>
-          <li class="menu-nav__item">Off</li>
+      <a class="logo" routerLink=""><img src="../../assets/logo.svg" alt="original.io"></a>
+
+      
+      <div class="auth">
+        <ul class="auth__list">
+          <li>Entrar</li>
+          <li>|</li>
+          <li>Cadastrar-se</li>
         </ul>
-      </nav>
-    </div>
-
-    <div class="menu-right">
-      <div class="search">
-        <img src="../../assets/icons/Union.svg" alt="Search">
-        <input type="text" placeholder="Busca">
       </div>
 
-      <div class="cart">
-        <img src="../../assets/icons/cart.svg" alt="Cart">
-        <span>0</span>
+      <div class="menu">
+        <nav>
+          <ul class="menu__list">
+            <li class="menu__item">Sapatos</li>
+            <li class="menu__item">Bolsas</li>
+            <li class="menu__item">Acessórios</li>
+            <li class="menu__item">Off</li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="right">
+        <div class="search">
+          <img src="../../assets/icons/Union.svg" alt="Search">
+          <input type="text" placeholder="Busca">
+        </div>
+  
+        <div class="cart">
+          <img src="../../assets/icons/cart.svg" alt="Cart">
+          <span>0</span>
+        </div>
       </div>
     </div>
   </div>
 </header>
+
+
+<!-- <header> 
+  <div class="header-logo">
+    <a routerLink=""><img src="../../assets/logo.svg" alt="original.io"></a>
+  </div>
+  <div class="navbar">
+    <div class="container navbar-content" [class.active]="openMenu">
+      <button id="btn-mobile" aria-label="Open menu" aria-haspopup="true" aria-expanded="false" (click)="menuMobile()"></button>
+      
+      <div class="navbar-content--mobile"></div>
+      <div class="auth">
+        <ul>
+          <li>Entrar</li>
+          <li>|</li>
+          <li>Cadastrar-se</li>
+        </ul>
+      </div>
+  
+      <div class="menu">
+        <nav>
+          <ul class="menu__list">
+            <li class="menu__item">Sapatos</li>
+            <li class="menu__item">Bolsas</li>
+            <li class="menu__item">Acessórios</li>
+            <li class="menu__item">Off</li>
+          </ul>
+        </nav>
+      </div>
+  
+      <div class="right">
+        <div class="search">
+          <img src="../../assets/icons/Union.svg" alt="Search">
+          <input type="text" placeholder="Busca">
+        </div>
+  
+        <div class="cart">
+          <img src="../../assets/icons/cart.svg" alt="Cart">
+          <span>0</span>
+        </div>
+      </div>
+    </div>
+      
+    
+   
+  </div>
+</header> -->

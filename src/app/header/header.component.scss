@@ -1,73 +1,225 @@
 @use "../../assets/scss/variables" as var;
+@use "../../assets/scss/mixins";
 
-.header {
-  &-logo {
-    padding: 25px 0;
-    text-align: center;
-  }
-}
+.navbar {
+  padding: 25px 0;
 
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
-  color: var.$menu-color;
-  padding: 20px 0;
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  &-sign {
-    ul {
-      display: flex;
-    }
+    #btn-mobile {
+      background: none;
+      border: none;
+      border-top: 3px solid #000;
+      width: 30px;
+      cursor: pointer;
 
-    li:nth-child(2) {
-      margin: 0 15px;
-    }
-  }
-
-  &-nav {
-    &__list {
-      display: flex;
-    }
-
-    &__item {
-      text-transform: uppercase;
-      margin-left: 2.5rem;
-
-      &:first-child {
-        margin: 0;
+      &:after,
+      &:before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 3px;
+        background: #000;
+        margin-top: 7px;
+        transition: 0.5s;
       }
     }
-  }
 
-  &-right {
-    display: flex;
-    
+    .auth {
+      display: none;
+      &__list {
+        display: flex;
 
-    .search {
-      display: flex;
-      border-bottom: 2px solid rgba(104, 104, 104, 0.4);
-      padding-bottom: 5px;
-      margin-right: 40px;
+        li:nth-child(odd) {
+          color: var.$primary;
+          font-weight: 700;
+          cursor: pointer;
 
-      input {
-        margin-left: 15px;
-        border: none;
-        outline: none;
-        width: 50px;
-        transition: 0.5s;
-        font-size: 1rem;
+          &:hover {
+            transition: 0.5s;
+            color: #000;
+          }
+        }
 
-        &:focus {
-          width: 120px;
+        li:nth-child(2) {
+          margin: 0 15px;
         }
       }
     }
 
-    .cart {
-      span {
-        margin-left: 5px;
+    .menu {
+      display: none;
+
+      &__item {
+        margin: 30px 0;
+        text-transform: uppercase;
+
+        &:hover {
+          transition: 0.5s;
+          color: var.$primary;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+
+      .search {
+        display: flex;
+        margin-right: 20px;
+
+        input {
+          display: none;
+        }
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: fixed;
+      top: 89px;
+      left: 0;
+      visibility: hidden;
+      overflow: hidden;
+      width: 0;
+      background: #ebebeb;
+      height: 100vh;
+      transition: 0.4s;
+      z-index: 100;
+    }
+
+    &.active {
+      &:after {
+        visibility: visible;
+        width: 100%;
+      }
+
+      #btn-mobile {
+        border-top: none;
+
+        &::after {
+          position: relative;
+          top: -10px;
+          transform: rotate(-135deg);
+        }
+        &::before {
+          transform: rotate(135deg);
+        }
+      }
+
+      .auth,
+      .menu {
+        display: block;
+        position: absolute;
+        z-index: 101;
+      }
+
+      .auth {
+        top: 130px;
+      }
+
+      .menu {
+        top: 160px;
+      }
+    }
+  }
+}
+
+@include mixins.for-medium-screen {
+  .navbar {
+    border-bottom: 1px solid #cccccc;
+
+    &-content {
+      display: grid;
+      row-gap: 50px;
+      color: var.$menu-color;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        display: block;
+        width: 100vw;
+        height: 1px;
+        background: #ccc;
+      }
+
+      //clear mobile menu
+
+      &:after {
+        display: none;
+      }
+
+      &.active {
+        .menu,
+        .auth {
+          position: static;
+        }
+      }
+
+      //--//
+
+      .logo {
+        grid-column: 1 / 4;
+        text-align: center;
+      }
+
+      #btn-mobile {
+        display: none;
+      }
+
+      .auth,
+      .menu {
+        display: block;
+      }
+
+      .auth {
+        &__list {
+          li:nth-child(odd) {
+            color: inherit;
+            font-weight: normal;
+          }
+        }
+      }
+
+      .menu {
+        &__list {
+          display: flex;
+        }
+
+        &__item {
+          margin: 0;
+          margin-left: 40px;
+
+          &:first-child {
+            margin: 0;
+          }
+        }
+      }
+
+      .right {
+        .search {
+          border-bottom: 1px solid rgba(104, 104, 104, 0.4);
+
+          input {
+            display: block;
+            border: none;
+            outline: none;
+            margin-left: 15px;
+            width: 60px;
+            font-size: 18px;
+            transition: 0.5s;
+
+            &:focus {
+              width: 120px;
+            }
+          }
+        }
       }
     }
   }

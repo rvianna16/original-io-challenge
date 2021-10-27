@@ -1,0 +1,21 @@
+@use 'variables' as var;
+
+
+
+// @mixin for-tablet {
+//   @media only screen and (min-width: var.$tablet) {
+//     @content;
+//   }
+// }
+
+@mixin for-medium-screen {
+  @media only screen and (min-width: var.$medium-screen) {
+    @content;
+  }
+}
+
+@mixin for-big-screen {
+  @media only screen and (max-width: var.$big-screen) {
+    @content;
+  }
+}

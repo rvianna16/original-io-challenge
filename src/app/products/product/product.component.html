@@ -1,3 +1,30 @@
-<p>{{ product.title }}</p>
-<p>{{ product.description }}</p>
-<p>Comprar: {{ product.price | currency: 'BRL'}}</p>
+<div class="product">
+  <h2 class="product__title">{{ product.title }}</h2>
+  <p class="product__code">{{ product.code }}</p>
+
+  <div class="slider">
+    <img src="{{ product.images[0].url }}" alt="Imagem do produto">
+  </div>
+
+  <div class="product-colors">
+    <p>Cor:</p>
+
+    <div *ngFor="let color of product.colors" [style.background]="color.hex" class="product-colors--circle">
+    </div>
+
+  </div>
+
+  <div class="sizes">
+    <p>Tamanho:</p>
+    <div class="sizes-box">
+      <div *ngFor="let size of product.sizes"
+       class="sizes--number">
+        {{ size }}
+      </div>
+
+       {{ product.price | currency: 'BRL'}}
+
+       
+    </div>
+  </div>
+</div>

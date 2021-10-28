@@ -32,4 +32,6 @@ export class ProductComponent implements OnInit {
   ngOnDestroy() {
     this.subscription.unsubscribe();    
   }
+
+  
 }

@@ -1,0 +1,37 @@
+@use "../../../assets/scss/variables" as var;
+
+.product {
+  &__title,
+  &__code {
+    text-align: center;
+  }
+
+  &__title {
+    color: var.$primary;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  &__code {
+    color: var.$legend-color;
+    margin: 10px 0;
+  }
+
+  .slider {
+    text-align: center;
+     img {
+       width: 80%;
+     }
+  }
+
+  &-colors {
+    display: flex;
+
+    &--circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+  }
+}

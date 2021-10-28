@@ -1,0 +1,6 @@
+<div *ngFor="let product of products">
+ <p [routerLink]="[product.category, product.id, product.title]"> {{ product.title }}</p>
+ <p> {{ product.description }}</p>
+ <p> {{ product.price | currency:'BRL' }}</p>
+ <br>
+</div>

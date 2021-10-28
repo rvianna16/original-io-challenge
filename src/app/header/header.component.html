@@ -1,11 +1,12 @@
 <header>
   <div class="navbar">
     <div class="container navbar-content" [class.active]="openMenu">
-      <button id="btn-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-expanded="false" (click)="menuMobile($event)"></button>
+      <button id="btn-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-expanded="false"
+        (click)="menuMobile($event)"></button>
 
       <a class="logo" routerLink=""><img src="../../assets/logo.svg" alt="original.io"></a>
 
-      
+
       <div class="auth">
         <ul class="auth__list">
           <li>Entrar</li>
@@ -17,10 +18,19 @@
       <div class="menu">
         <nav>
           <ul class="menu__list">
-            <li class="menu__item">Sapatos</li>
-            <li class="menu__item">Bolsas</li>
-            <li class="menu__item">Acessórios</li>
-            <li class="menu__item">Off</li>
+            <li class="menu__item" routerLinkActive="active">
+              <a routerLink="sapatos"> Sapatos</a>
+              
+            </li>
+            <li class="menu__item" routerLinkActive="active">
+              <a routerLink="bolsas">Bolsas</a>
+            </li>
+            <li class="menu__item" routerLinkActive="active">
+              <a routerLink="acessorios">Acessórios</a>
+            </li>
+            <li class="menu__item" routerLinkActive="active">
+              <a routerLink="off">Off</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -30,59 +40,20 @@
           <img src="../../assets/icons/Union.svg" alt="Search">
           <input type="text" placeholder="Busca">
         </div>
-  
+
         <div class="cart">
           <img src="../../assets/icons/cart.svg" alt="Cart">
           <span>0</span>
         </div>
       </div>
-    </div>
+    </div>    
   </div>
+  <div class="container">
+    home {{ currentRoute }}
+    
+  </div>
+
+ 
 </header>
 
 
-<!-- <header> 
-  <div class="header-logo">
-    <a routerLink=""><img src="../../assets/logo.svg" alt="original.io"></a>
-  </div>
-  <div class="navbar">
-    <div class="container navbar-content" [class.active]="openMenu">
-      <button id="btn-mobile" aria-label="Open menu" aria-haspopup="true" aria-expanded="false" (click)="menuMobile()"></button>
-      
-      <div class="navbar-content--mobile"></div>
-      <div class="auth">
-        <ul>
-          <li>Entrar</li>
-          <li>|</li>
-          <li>Cadastrar-se</li>
-        </ul>
-      </div>
-  
-      <div class="menu">
-        <nav>
-          <ul class="menu__list">
-            <li class="menu__item">Sapatos</li>
-            <li class="menu__item">Bolsas</li>
-            <li class="menu__item">Acessórios</li>
-            <li class="menu__item">Off</li>
-          </ul>
-        </nav>
-      </div>
-  
-      <div class="right">
-        <div class="search">
-          <img src="../../assets/icons/Union.svg" alt="Search">
-          <input type="text" placeholder="Busca">
-        </div>
-  
-        <div class="cart">
-          <img src="../../assets/icons/cart.svg" alt="Cart">
-          <span>0</span>
-        </div>
-      </div>
-    </div>
-      
-    
-   
-  </div>
-</header> -->

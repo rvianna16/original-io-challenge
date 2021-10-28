@@ -57,6 +57,11 @@
         margin: 30px 0;
         text-transform: uppercase;
 
+        &.active {
+          color: var.$primary;
+          font-weight: bold;
+        }
+
         &:hover {
           transition: 0.5s;
           color: var.$primary;

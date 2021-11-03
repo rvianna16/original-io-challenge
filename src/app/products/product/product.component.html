@@ -6,25 +6,30 @@
     <img src="{{ product.images[0].url }}" alt="Imagem do produto">
   </div>
 
-  <div class="product-colors">
-    <p>Cor:</p>
+  <div class="colors">
+    <p>Cor: <span>{{ colorName }}</span></p>
 
-    <div *ngFor="let color of product.colors" [style.background]="color.hex" class="product-colors--circle">
+    <div class="colors-box">
+      <input type="radio"
+      *ngFor="let color of product.colors"  
+      name="color"
+      [style.background]="color.hex" 
+      [value]="color.name"
+      [(ngModel)]="colorName"
+      class="colors--circle">      
     </div>
 
   </div>
 
   <div class="sizes">
-    <p>Tamanho:</p>
+    <p>Tamanho: <span>{{ sizeNumber }}</span></p>
+    
     <div class="sizes-box">
-      <div *ngFor="let size of product.sizes"
-       class="sizes--number">
-        {{ size }}
+      <div *ngFor="let size of product.sizes" class="sizes--number" (click)="getSize(size)">
+        <span>{{ size }}</span>        
       </div>
-
-       {{ product.price | currency: 'BRL'}}
-
-       
     </div>
   </div>
+  
+  
 </div>

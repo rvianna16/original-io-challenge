@@ -10,8 +10,8 @@ export class HeaderComponent implements OnInit {
   openMenu: boolean = false;
   currentRoute!: string;
 
-  constructor(private _router: Router) {
-    this._router.events.subscribe((e) => {
+  constructor(private router: Router) {
+    this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         this.currentRoute = e.url;
       }

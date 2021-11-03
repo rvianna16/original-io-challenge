@@ -19,19 +19,61 @@
 
   .slider {
     text-align: center;
-     img {
-       width: 80%;
-     }
+    img {
+      width: 80%;
+    }
   }
 
-  &-colors {
-    display: flex;
+  .colors {
+    padding: 15px 0;
 
-    &--circle {
-      width: 22px;
-      height: 22px;
-      border-radius: 20px;
-      margin-right: 10px;
+    span {
+      color: #5f75aa;
+    }
+
+    &-box {
+      display: flex;
+      margin-top: 10px;
+
+      input[type="radio"] {
+        -webkit-appearance: none;
+        width: 22px;
+        height: 22px;
+        border-radius: 20px;
+        margin-right: 10px;
+        transition: .5s;
+
+        &:checked:before {
+          border: 2px solid  #DE8F75;
+          content: "";
+          display: block;
+          width: 28px;
+          height: 28px;
+          opacity: .7;
+          transform: translate3d(-5px, -5px, -5px);
+          border-radius: 50%;
+          
+        }
+      }
+    }
+  }
+
+  .sizes {
+    &-box {
+      display: flex;
+      margin-top: 10px;
+      gap: 5px;
+    }
+
+    &--number {
+      border: 1px solid #ebebeb;
+      padding: 6px;
+      color: var.$size-color;
+
+      &.active {
+        background: #e29d86;
+        color: #fff;
+      }
     }
   }
 }

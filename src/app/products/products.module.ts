@@ -6,6 +6,7 @@ import { ShoesComponent } from './shoes/shoes.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsService } from '../services/products.service';
 import { ProductsComponent } from './products.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ProductsComponent } from './products.component';
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    FormsModule
   ],  
   exports: [ProductsComponent],
   providers: [ProductsService]

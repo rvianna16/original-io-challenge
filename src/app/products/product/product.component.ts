@@ -14,6 +14,8 @@ export class ProductComponent implements OnInit {
   subscription!: Subscription;
   id!: number;
   product: any = {};
+  colorName!: any;
+  sizeNumber!: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +33,10 @@ export class ProductComponent implements OnInit {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();    
+  }
+
+  getSize(size: any) {
+    this.sizeNumber = size;
   }
 
   

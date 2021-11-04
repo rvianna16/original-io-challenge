@@ -33,11 +33,17 @@ export class ProductComponent implements OnInit {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();    
-  }
+  }  
 
-  getSize(size: any) {
-    this.sizeNumber = size;
+  addCart() {
+    if(this.colorName === undefined) {
+      alert('Você deve selecionar uma cor')
+    }else if(this.sizeNumber === undefined) {
+      alert('Você deve selecionar um tamanho')
+    }else {
+      alert('Produto adicionado!')
+      this.colorName = undefined;
+      this.sizeNumber = undefined;
+    }
   }
-
-  
 }

@@ -41,39 +41,101 @@
         height: 22px;
         border-radius: 20px;
         margin-right: 10px;
-        transition: .5s;
+        transition: 0.5s;
 
         &:checked:before {
-          border: 2px solid  #DE8F75;
+          border: 2px solid #de8f75;
           content: "";
           display: block;
           width: 28px;
           height: 28px;
-          opacity: .7;
+          opacity: 0.7;
           transform: translate3d(-5px, -5px, -5px);
           border-radius: 50%;
-          
         }
       }
     }
   }
 
   .sizes {
-    &-box {
-      display: flex;
-      margin-top: 10px;
-      gap: 5px;
+    margin-top: 10px;
+
+    span {
+      color: #5f75aa;
     }
 
-    &--number {
-      border: 1px solid #ebebeb;
-      padding: 6px;
-      color: var.$size-color;
+    &-box {
+      margin-top: 15px;
+      display: flex;
+      gap: 5px;
 
-      &.active {
-        background: #e29d86;
+      label {
+        border: 1px solid #ebebeb;
+        padding: 6px;
+        color: var.$size-color;
+      }
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      input[type="radio"]:checked + label {
+        background-color: #e29d86;
         color: #fff;
       }
     }
   }
+
+  .buy {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    .price {       
+      &__old {
+        text-decoration: line-through;
+        color: #e35442;
+      }
+  
+      &__new {
+        color: #686868;
+        font-size: 18px;
+        margin: 8px 0;
+      }
+  
+      &__parcel {
+        color: #7f7f7f;
+      }
+    }
+
+    .add-cart {
+      display: inline-block;
+      width: 170px;
+      height: 70px;
+      border: none;
+      outline: none;
+      background-color: #32917B;
+      color: #fff;
+      text-transform: uppercase;
+      padding: 5px;
+      font-size: 22px;
+      border-radius: 3px;
+    }
+  }
+
+  .description {
+    &__title {
+      color: var.$primary;
+      font-weight: normal;
+    }
+
+    &__text {
+      margin-top: 10px;
+      line-height: 26px;
+    }
+  }
+
+  
 }

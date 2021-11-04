@@ -16,7 +16,7 @@ export class ProductsService {
       sizes: [33, 34, 36, 37, 38, 39, 40],
       colors: [
         {
-          name: 'Roxo',
+          name: 'Fucsia',
           hex: '#a9095E',
         },
         {
@@ -36,6 +36,7 @@ export class ProductsService {
         {
           name: 'Foto da rasteira',
           url: 'https://i.imgur.com/z7ETXxK.png',
+          
         },
       ],
     },
@@ -46,17 +47,13 @@ export class ProductsService {
       code: 'RT 0568 | 03.07.0653',
       price: 59.2,
       description:
-        'Rasteira em atanado soft com tira no dedo e fechamento de fivela. Possui sola sempre na cor do cabedal.',
-      sizes: [33, 34, 36, 37, 38, 39, 40],
+        'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ',
+      sizes: [33, 34, 36, 37, 38],
       colors: [
         {
-          name: 'Roxo',
+          name: 'Fucsia',
           hex: '#a9095E',
-        },
-        {
-          name: 'Azul marinho',
-          hex: '#6B85C1'
-        },
+        },        
         {
           name: 'Marrom',
           hex: '#A14830'

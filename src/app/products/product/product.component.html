@@ -3,7 +3,9 @@
   <p class="product__code">{{ product.code }}</p>
 
   <div class="slider">
-    <img src="{{ product.images[0].url }}" alt="Imagem do produto">
+    <app-slider>
+      <ng-template swiperSlide><img src="../../assets/prod02.png"></ng-template>
+    </app-slider>
   </div>
 
   <div class="colors">
@@ -25,11 +27,31 @@
     <p>Tamanho: <span>{{ sizeNumber }}</span></p>
     
     <div class="sizes-box">
-      <div *ngFor="let size of product.sizes" class="sizes--number" (click)="getSize(size)">
-        <span>{{ size }}</span>        
-      </div>
+      <div *ngFor="let size of product.sizes">        
+        <input
+        type="radio"
+        name="size"
+        [value]="size"
+        [(ngModel)]="sizeNumber"
+        [id]="size"       
+        class="sizes--number" 
+        >     
+        <label [for]="size">{{ size }}</label>
+      </div>      
     </div>
+  </div>  
+
+  <div class="buy">
+    <div class="price">
+      <p class="price__old">{{ product.price * 1.25 | currency:'BRL' }}</p>
+      <p class="price__new">{{ product.price | currency:'BRL' }}</p>
+      <p>Ou 6x de {{ product.price / 6 | currency:'BRL' }}</p>
+    </div>    
+    <button class="add-cart" (click)="addCart()">Adicionar a sacola</button>
   </div>
-  
-  
+
+  <div class="description">
+    <h3 class="description__title">Descrição</h3>
+    <p class="description__text">{{product.description}}</p>
+  </div>
 </div>

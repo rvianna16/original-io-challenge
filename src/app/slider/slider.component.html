@@ -1,0 +1,16 @@
+<swiper 
+  [pagination]="{
+    clickable: true
+  }" 
+  [navigation]="true" 
+  [loop]="true"
+  [autoplay]="{
+    delay: 3000,
+    disableOnInteraction: false
+  }" 
+  class="mySwiper"
+>
+  <ng-template swiperSlide><img src="../../assets/prod02.png"></ng-template>
+  <ng-template swiperSlide><img src="../../assets/prod04.png"></ng-template>
+  <ng-template swiperSlide><img src="../../assets/prod02.png"></ng-template>  
+</swiper>

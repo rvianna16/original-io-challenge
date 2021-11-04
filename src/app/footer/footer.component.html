@@ -1,1 +1,76 @@
-<p>footer works!</p>
+<footer>
+  
+  <dl class="links">
+    <dt (click)="toggleAccordion($event)">Institucional</dt>
+    <dd>
+      <li>A Marca</li>
+      <li>Lojas</li>
+      <li>Contato</li>
+    </dd>
+
+    <dt (click)="toggleAccordion($event)">Informações</dt>
+    <dd>
+      <li>Formas de Pagamento</li>
+      <li>Trocas e Devoluções</li>
+      <li>Cuidados com o Produto</li>
+    </dd>
+
+    <dt (click)="toggleAccordion($event)">Conheça</dt>
+    <dd>
+      <li>Franquias e Multimarcas</li>
+      <li>Trabalhe com a Gente</li>
+      <li>Procon-RJ</li>
+    </dd>
+  </dl>  
+
+  <div class="container">  
+  <div class="socials">
+    <a href="https://pt-br.facebook.com/">
+      <img src="../../assets/icons/facebook.svg" alt="Facebook">
+    </a>
+    <a href="https://instagram.com/">
+      <img src="../../assets/icons/instagram.svg" alt="Instagram">
+    </a>
+    <a href="https://pinterest.com/">
+      <img src="../../assets/icons/pinterest.svg" alt="Pinterest">
+    </a>
+  </div>
+
+  <div class="stamps">
+    <img src="../../assets/icons/vtex.png" alt="Vtex">
+    <img src="../../assets/icons/ebit.png" alt="Ebit">
+  </div>
+
+  <div class="newsletter">
+    <h4 class="newsletter__title">Assine nossa news</h4>
+    <form action="">
+      <div class="group">
+        <input type="text" value="Renata" required>
+        <label>Nome</label>
+      </div>
+      
+      <div class="group">
+        <input class="email" type="text" required>
+        <label>E-mail</label>
+
+        <button class="btn-news" type="submit"> Enviar </button>
+      </div> 
+
+      
+    </form>
+  </div>
+</div>
+
+  <div class="info">
+    <div class="container">
+      <p class="info__text">Via Mia | V. Milano Centro Comercio de Bolsas Eireli - EPP.<br> Av.das Américas, 500 - bloco 20, loja 126 - Barra da Tijuca - Rio de Janeiro - RJ -</p>
+      <p class="info__text">CEP: 22640-100 </p>
+      <p class="info__text">CNPJ: 05.292.288/0002-10 - I.E: 86.732.548 </p>
+      <p class="info__text">ecommerce@viamia.com.br</p>
+
+      <div class="info__logo">
+        <img src="../../assets/logo-footer.svg" alt="Original.io">
+      </div>
+    </div>
+  </div>
+</footer>

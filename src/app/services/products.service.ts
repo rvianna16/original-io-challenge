@@ -34,8 +34,18 @@ export class ProductsService {
       ],
       images: [
         {
-          name: 'Foto da rasteira',
-          url: 'https://i.imgur.com/z7ETXxK.png',
+          name: 'Foto 01',
+          url: 'https://i.imgur.com/JhQ9txD.png',
+          
+        },
+        { 
+          name: 'Foto 02',
+          url: 'https://i.imgur.com/0nXYAwF.png',
+          
+        },
+        {
+          name: 'Foto 03',
+          url: 'https://i.imgur.com/dj5RpuL.png',
           
         },
       ],
@@ -65,8 +75,13 @@ export class ProductsService {
       ],
       images: [
         {
-          name: 'Foto da rasteira',
-          url: 'https://i.imgur.com/z7ETXxK.png',
+          name: 'Foto 01',
+          url: 'https://i.imgur.com/dj5RpuL.png',
+        },
+        {
+          name: 'Foto 02',
+          url: 'https://i.imgur.com/JhQ9txD.png',
+          
         },
       ],
     },

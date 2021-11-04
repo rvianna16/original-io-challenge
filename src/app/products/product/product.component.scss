@@ -44,7 +44,7 @@
         transition: 0.5s;
 
         &:checked:before {
-          border: 2px solid #de8f75;
+          border: 2px solid var.$primary;
           content: "";
           display: block;
           width: 28px;

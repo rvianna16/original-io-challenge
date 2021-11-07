@@ -1,0 +1,26 @@
+<div class="cart-container" [class.active]="openCart">
+  <div class="cart">
+    <div class="cart-header">
+      <h4 class="cart__title">Sacola</h4>
+      <span class="cart__left">5 Itens</span>
+      <button class="cart__close-btn" (click)="toggleCart()">X</button>
+    </div>   
+    <div class="cart-content">
+      <div class="cart-product">
+        <img class="cart-product__image" src="../../assets/prod02.png">
+        <div class="cart-product__info">
+          <h5 class="cart-product__name">Rasteira Tira Dedo</h5>
+          <span class="cart-product__price"> R$45,90 </span>
+        </div>
+        <div class="cart-product__amount">
+          -
+          <input type="number" readonly [value]="1">
+          +
+        </div>
+        <div class="cart-product__remove">X</div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+

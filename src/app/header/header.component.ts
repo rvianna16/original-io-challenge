@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit { 
+  tsCart: boolean = true;
   openMenu: boolean = false;
   currentRoute!: string;
 
@@ -18,7 +20,9 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
 
   menuMobile(event: any) {
     this.openMenu = !this.openMenu;
@@ -30,5 +34,13 @@ export class HeaderComponent implements OnInit {
     } else {
       event.target.setAttribute('aria-label', 'Abrir menu');
     }
+  } 
+
+  openCart() {
+    this.tsCart = true;
+  }
+
+  onCloseCart(event: any) {
+   this.tsCart = event;    
   }
 }

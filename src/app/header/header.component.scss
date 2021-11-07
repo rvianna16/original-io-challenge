@@ -74,7 +74,7 @@
       }
     }
 
-    .right {
+    .nav-right {
       display: flex;
 
       .search {
@@ -96,12 +96,13 @@
       visibility: hidden;
       overflow: hidden;
       width: 0;
-      background: #ebebeb;
+      background: #eee;
       height: 100vh;
       transition: 0.4s;
       z-index: 100;
     }
 
+    // menu open
     &.active {
       &:after {
         visibility: visible;
@@ -141,7 +142,7 @@
 
 @include mixins.for-medium-screen {
   .navbar {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid #ccc;
 
     &-content {
       display: grid;
@@ -211,7 +212,7 @@
         }
       }
 
-      .right {
+      .nav-right {
         .search {
           border-bottom: 1px solid rgba(104, 104, 104, 0.4);
 

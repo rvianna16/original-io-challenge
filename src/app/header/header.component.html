@@ -35,13 +35,13 @@
         </nav>
       </div>
 
-      <div class="right">
+      <div class="nav-right">
         <div class="search">
           <img src="../../assets/icons/Union.svg" alt="Search">
           <input type="text" placeholder="Busca">
         </div>
 
-        <div class="cart">
+        <div class="cart" (click)="openCart()">
           <img src="../../assets/icons/cart.svg" alt="Cart">
           <span>0</span>
         </div>
@@ -51,9 +51,11 @@
   <div class="container">
     home {{ currentRoute }}
     
-  </div>
-
- 
+  </div> 
 </header>
-
+<app-cart
+ [openCart]="tsCart"
+ (closeCart)="onCloseCart($event)"
+ >
+</app-cart>
 

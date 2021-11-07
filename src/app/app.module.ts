@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsModule } from './products/products.module';
 import { FooterComponent } from './footer/footer.component';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -20,6 +21,7 @@ registerLocaleData(localePt);
     HeaderComponent,
     HomeComponent,
     FooterComponent,
+    CartComponent,
     
   ],
   imports: [

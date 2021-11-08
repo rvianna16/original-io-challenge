@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { CartService } from 'src/app/services/cart.service';
 
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -19,7 +20,8 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +42,13 @@ export class ProductComponent implements OnInit {
     }else if(this.sizeNumber === undefined) {
       alert('Você deve selecionar um tamanho')
     }else {
+      this.cartService.addProductCart({
+        name: this.product.name,
+        price: this.product.price,
+        color: this.colorName,
+        size: this.sizeNumber,
+        image: this.product.images[0]
+      })
       alert('Produto adicionado!')
       this.colorName = undefined;
       this.sizeNumber = undefined;

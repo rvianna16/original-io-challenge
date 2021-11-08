@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductsModule } from './products/products.module';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
+import { CartService } from './services/cart.service';
 
 
 
@@ -33,7 +34,8 @@ registerLocaleData(localePt);
     {
     provide: LOCALE_ID,
     useValue: 'pt-BR'
-    }
+    },
+    CartService
   ],
   bootstrap: [AppComponent]
 })

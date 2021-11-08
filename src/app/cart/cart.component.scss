@@ -1,8 +1,6 @@
 @use '../../assets/scss/variables' as var;
 
-.cart {  
-  padding: 25px;
-  
+.cart {   
   &-container {
     position: fixed;
     top: 0;
@@ -19,6 +17,7 @@
   }
 
   &-header {
+    padding: 25px;
     position: relative;
     padding-bottom: 15px;
     border-bottom: 1px solid #E3E3E3;
@@ -43,12 +42,12 @@
     font-weight: 700;
     color: #5F75AA;
     font-size: 26px;
-    top: 0;
-    right: 0;
+    top: 25px;
+    right: 25px;
   }
 
   &-content {    
-    max-height: 500px;
+    max-height: 70vh;
     overflow: scroll;
   }
 
@@ -56,6 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding:  0 15px;
     margin: 15px 0;
 
     &__image {
@@ -65,15 +65,90 @@
 
     &__name {      
       max-width: 90px;   
-      font-weight: 400; 
+      font-weight: 400;     
+      max-width: 100px;       
+      font-size: 16px;
     }
 
     &__price {
       font-weight: 700;
     }
 
+    &__amount {
+      display: flex;
+      align-items: center;
+      margin: 0 25px;
+
+      .btn {
+        border: none;        
+        background: none;
+        font-size: 22px;
+        color: #AEB6C1;
+        font-weight: 700;
+
+        &:hover {
+          color: var.$primary;
+        }
+      }
+      input {
+        border: none;
+        outline: none;
+        text-align: center;
+        width: 15px;
+        font-size: 20px;
+        color:#5F75AA;
+        margin: 0 10px;
+      }
+    }
+
     &__remove {
-      margin-right: 20px;
+      margin-right:20px;
+      opacity: .5;
+    }
+  }
+
+  &-footer {
+    position: absolute;
+    bottom: 0; 
+  }
+  
+
+  &-notice {    
+    bottom: 0;
+    background: #AEB6C1;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+  }
+
+
+  &-total {
+    background: #E3E3E3;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    h5 {
+      opacity: .8;
+      font-size: 18px;
+    }
+
+    span {
+      opacity: .6;
+    }    
+  }
+
+  &__buy {
+    button {
+      width: 140px;
+      height: 50px;
+      border: none;
+      background: #32917B;
+      color: #fff;
+      border-radius: 3px;
+      
     }
   }
 }

@@ -2,25 +2,45 @@
   <div class="cart">
     <div class="cart-header">
       <h4 class="cart__title">Sacola</h4>
-      <span class="cart__left">5 Itens</span>
+      <span class="cart__left">{{ cartItems.length }} Itens</span>
       <button class="cart__close-btn" (click)="toggleCart()">X</button>
     </div>   
-    <div class="cart-content">
-      <div class="cart-product">
-        <img class="cart-product__image" src="../../assets/prod02.png">
+    <div class="cart-content">      
+      <div *ngFor="let item of cartItems; let index = index" class="cart-product">
+        <img class="cart-product__image" src="{{ item.image.url }}" alt="{{ item.image.name }}">
         <div class="cart-product__info">
-          <h5 class="cart-product__name">Rasteira Tira Dedo</h5>
-          <span class="cart-product__price"> R$45,90 </span>
+          <h5 class="cart-product__name"> {{ item.name }}</h5>
+          <span class="cart-product__price"> {{ item.price | currency: 'BRL'}} </span>
         </div>
         <div class="cart-product__amount">
-          -
+          <button class="btn">-</button>
           <input type="number" readonly [value]="1">
-          +
+          <button class="btn">+</button>          
         </div>
-        <div class="cart-product__remove">X</div>
-      </div>
-      
+        <div class="cart-product__remove" (click)="removeCart(index)">X</div>
+      </div>       
     </div>
+    <div class="cart-footer">
+      <div class="cart-notice">
+        <div *ngIf="total < 200">
+          <p >Faltam {{ 200 - total | currency: 'BRL'}} para você</p>
+          <p>Ganhar Frete Grátis</p>
+        </div>
+        <div *ngIf="total >= 200">
+          <p> Você ganhou frete grátis!</p>
+        </div>
+       
+      </div>
+      <div class="cart-total">
+        <div>
+          <h5>Total: {{ total | currency: 'BRL'}}</h5>
+          <span>até 3x de {{ total / 3 | currency: 'BRL'}} sem juros</span>
+        </div>
+        <div class="cart__buy">
+          <button>Finalizar compra</button>
+        </div>
+      </div>
+    </div>   
   </div>
 </div>
 

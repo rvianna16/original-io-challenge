@@ -7,7 +7,7 @@ export class ProductsService {
   products: any[] = [
     {
       id: 1,
-      title: 'Rasteira tira dedo',
+      name: 'Rasteira tira dedo',
       category: 'sapatos',
       code: 'RT 0568 | 03.07.0653',
       price: 55.2,
@@ -52,7 +52,7 @@ export class ProductsService {
     },
     {
       id: 2,
-      title: 'Sapatenis',
+      name: 'Sapatenis',
       category: 'sapatos',
       code: 'RT 0568 | 03.07.0653',
       price: 59.2,

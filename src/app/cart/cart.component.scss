@@ -51,6 +51,11 @@
     overflow: scroll;
   }
 
+  &-empty {
+    padding: 20px 0;
+    text-align: center;
+  }
+
   &-product {
     display: flex;
     align-items: center;
@@ -94,7 +99,7 @@
         border: none;
         outline: none;
         text-align: center;
-        width: 15px;
+        width: 30px;
         font-size: 20px;
         color:#5F75AA;
         margin: 0 10px;

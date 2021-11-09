@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  products: any[] = [];
+  products: Array<any> = [];
+  totalPrice: Subject<number> = new Subject<number>();
 
   constructor() {}
 
-  addProductCart(product: Object) {
-    this.products.push(product);    
+  addProductCart(product: any) { 
+    product.fixedPrice = product.price;   
+    this.products.push(product);  
+    this.getTotalPrice();  
   }
 
   getItems() {    
@@ -18,6 +22,12 @@ export class CartService {
 
   removeItem(index: number) {
     this.products.splice(index, 1)
+    this.getTotalPrice();  
+  }
+
+  updatePrice(product: any) {
+    product.price = product.fixedPrice * product.quantity;
+    this.getTotalPrice();
   }
 
   getTotalPrice() {
@@ -30,7 +40,7 @@ export class CartService {
           return (total += price);
         });
     }
-
-    return total;
+    
+    this.totalPrice.next(total);
   }
 }

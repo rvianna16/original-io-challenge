@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 
 @Component({
@@ -8,11 +9,15 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit { 
-  tsCart: boolean = true;
+  tsCart: boolean = false;
   openMenu: boolean = false;
   currentRoute!: string;
+  cartItems: Array<any> = [];
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private cartSerice: CartService
+    ) {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         this.currentRoute = e.url;
@@ -20,8 +25,8 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {      
+    this.cartItems = this.cartSerice.getItems();
   }
 
   menuMobile(event: any) {

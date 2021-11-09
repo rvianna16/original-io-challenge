@@ -43,11 +43,12 @@ export class ProductComponent implements OnInit {
       alert('Você deve selecionar um tamanho')
     }else {
       this.cartService.addProductCart({
-        name: this.product.name,
+        name: this.product.name,        
         price: this.product.price,
         color: this.colorName,
         size: this.sizeNumber,
-        image: this.product.images[0]
+        image: this.product.images[0],
+        quantity: 1
       })
       alert('Produto adicionado!')
       this.colorName = undefined;
